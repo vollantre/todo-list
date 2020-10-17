@@ -4,18 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Todo List</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="stylesheet" href="../src/stylesheet.css">
+    <link rel="stylesheet" href="./stylesheet.css">
   </head>
   <body>
     <aside class="menu">
       <h1 class="title">TODO APP</h1>
       <div style="justify-content: center; display: flex; margin-bottom: 20px;">
-        <button class="button is-primary">
+        <button id="add-todo" class="button is-danger is-rounded">
           + Add new task
         </button>
       </div>
       <p class="menu-label">
+        PROJECTS
+      </p>
+      <ul class="menu-list">
+        <li>
+          <ul>
+            <li><a class="is-active">sample project</a></li>
+          </ul>
+        </li>
+      </ul>
+       <p class="menu-label">
         TASKS
       </p>
       <ul class="menu-list">

@@ -1,1 +1,1 @@
-console.log("XDDD");
+(()=>{"use strict";document.getElementById("add-todo").addEventListener("click",(()=>console.log("XDDDDD")))})();

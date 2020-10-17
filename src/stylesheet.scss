@@ -1,3 +1,6 @@
+@charset "utf-8";
+@import "~bulma/bulma";
+
 html,
 body {
   height: 100%;
@@ -9,11 +12,16 @@ body {
 }
 
 body {
-  background: url('../public/background.jpg');
+  background: rgb(176,30,162);
+  background: linear-gradient(180deg, rgba(176,30,162,1) 0%, rgba(60,172,232,1) 100%);
   display: flex;
 }
 
 .menu {
   background-color: #ffffff;
   width: 225px;
+}
+
+.title {
+  margin-top: 10px;
 }
