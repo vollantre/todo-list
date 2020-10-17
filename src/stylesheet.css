@@ -1,0 +1,19 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+}
+
+body {
+  background: url('../public/background.jpg');
+  display: flex;
+}
+
+.menu {
+  background-color: #ffffff;
+  width: 225px;
+}
