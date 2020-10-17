@@ -1,6 +1,6 @@
-import './stylesheet.scss';
+import './mystyles.scss';
 
 const todos = [];
 
 const addTodoBtn = document.getElementById('add-todo');
-addTodoBtn.addEventListener("click", () => console.log('XDDDDD'));
+addTodoBtn.addEventListener("click", () => console.log('XDDDDdD'));
