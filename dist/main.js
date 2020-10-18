@@ -1,1 +1,1 @@
-(()=>{"use strict";document.getElementById("add-todo").addEventListener("click",(()=>console.log("XDDDDdD")))})();
+(()=>{"use strict";document.getElementById("add-project").addEventListener("click",(()=>{document.querySelector(".modal").classList.add("is-active")}))})();

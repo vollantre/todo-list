@@ -4,7 +4,6 @@ body {
   width: 100%;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
 }
 
 body {
@@ -20,4 +19,13 @@ body {
 
 .title {
   margin-top: 10px;
+}
+
+.title.is-1 {
+  margin-top: auto;
+  color: white;
+}
+
+.icon {
+  margin-right: 0;
 }

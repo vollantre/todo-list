@@ -1,6 +1,8 @@
-import './mystyles.scss';
+import "./mystyles.scss";
 
 const todos = [];
 
-const addTodoBtn = document.getElementById('add-todo');
-addTodoBtn.addEventListener("click", () => console.log('XDDDDdD'));
+const addProjectBtn = document.getElementById("add-project");
+addProjectBtn.addEventListener("click", () => {
+  document.querySelector(".modal").classList.add("is-active");
+});
