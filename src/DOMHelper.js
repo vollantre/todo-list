@@ -7,12 +7,12 @@ export default (() => {
 
   return {
     //add click events listeners
-    addEvents() {
+    addEvents: () => {
       newProjectBtn.addEventListener("click", () => openModal("project-modal"));
       newTaskBtn.addEventListener("click", () => openModal("task-modal"));
       
-      //add click listener to cancel button of each modal
-      Array.from(document.querySelectorAll("a#modal-close")).map(node => {
+      //add listeners to cancel button of each modal
+      Array.from(document.querySelectorAll("a#modal-close")).forEach(node => {
         const modal = node.parentNode.parentNode.parentNode.parentNode.parentNode;
         node.addEventListener("click", () => closeModal(modal.id));
       })
