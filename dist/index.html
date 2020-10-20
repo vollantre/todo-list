@@ -18,17 +18,17 @@
           </span>
           Add new project
         </button>
-        <div id="new-project-modal" class="modal">
+        <div id="project-modal" class="modal">
           <div class="modal-background"></div>
           <div class="modal-content">
             <form>
+              <h4 class="title is-3 is-centered">Add new project</h4>
               <div class="field">
-                <label class="label">Add new project</label>
                 <div class="control">
                   <input class="input is-primary" type="text" placeholder="Project name">
                 </div>
               </div>
-              <div class="field is-grouped">
+              <div class="field is-grouped is-grouped-centered">
                 <p class="control">
                   <a class="button is-primary">
                     Save
@@ -50,7 +50,7 @@
       <ul class="menu-list">
         <li>
           <ul>
-            <li><a>Default project</a></li>
+            <li><a class="is-active">Default project</a></li>
           </ul>
         </li>
       </ul>
@@ -59,7 +59,7 @@
       </p>
     </aside>
     <div style="flex: 1;">
-      <h1 style="text-align: center;" class="title is-1">sample project</h1>
+      <h1 style="text-align: center;" class="title is-1">Default project</h1>
       <div style="display: flex; flex-wrap: wrap; margin: 20px;">
         <div class="card">
           <header class="card-header">
@@ -84,17 +84,45 @@
             <i class="fa fa-plus"></i>
           </span>
         </button>
-        <div id="new-task-modal" class="modal">
+        <div id="task-modal" class="modal">
           <div class="modal-background"></div>
           <div class="modal-content">
             <form>
+              <h4 class="title is-3 is-centered">Add new task</h4>
               <div class="field">
-                <label class="label">Add new task</label>
                 <div class="control">
-                  <input class="input is-primary" type="text" placeholder="Task name">
+                  <input class="input is-primary" type="text" placeholder="Title">
                 </div>
               </div>
-              <div class="field is-grouped">
+              <div class="field">
+                <div class="control">
+                  <input class="input is-primary" type="text" placeholder="Description">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Due date</label>
+                <div class="control">
+                  <input class="input is-primary" type="date" placeholder="Description">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Priotity</label>
+                <div class="control">
+                  <div class="select is-info">
+                    <select>
+                      <option>Low</option>
+                      <option>Medium</option>
+                      <option>High</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <textarea class="textarea is-primary" placeholder="Notes"></textarea>
+                </div>
+              </div>
+              <div class="field is-grouped is-grouped-centered">
                 <p class="control">
                   <a class="button is-primary">
                     Save

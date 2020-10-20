@@ -8,8 +8,8 @@ export default (() => {
 
   return {
     addEvents() {
-      newProjectBtn.addEventListener("click", () => openModal("new-project-modal"));
-      newTaskBtn.addEventListener("click", () => openModal("new-task-modal"));
+      newProjectBtn.addEventListener("click", () => openModal("project-modal"));
+      newTaskBtn.addEventListener("click", () => openModal("task-modal"));
       
       //add click listener to cancel button of each modal
       Array.from(document.querySelectorAll("a#modal-close")).map(node => {
