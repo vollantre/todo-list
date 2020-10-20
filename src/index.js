@@ -1,10 +1,14 @@
 import "./mystyles.scss";
 
-const projects = [];
+const projects = [{
+  id: "0",
+  name: "Default project",
+  todoList: []
+}];
 
 const modal = document.querySelector(".modal");
 
-const addProjectBtn = document.getElementById("add-project");
+const addProjectBtn = document.getElementById("add-project-btn");
 addProjectBtn.addEventListener("click", () => {
   modal.classList.add("is-active");
 });

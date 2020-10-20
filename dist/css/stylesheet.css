@@ -39,3 +39,24 @@ form {
   border-radius: 4px;
   padding: 15px;
 }
+
+#add-todo-btn {
+	position:fixed;
+	bottom:40px;
+	right:40px;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  box-shadow: 0 0 15px 2px rgba(0,0,0,0.35);
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 1.35rem;
+}
+
+[data-tooltip]:not(.is-loading)::after, [data-tooltip]:not(.is-disabled)::after, [data-tooltip]:not([disabled])::after {
+  border-color: rgba(55, 55, 52, 0.75) transparent transparent transparent;
+}
+
+[data-tooltip]:not(.is-loading)::before, [data-tooltip]:not(.is-disabled)::before, [data-tooltip]:not([disabled])::before {
+  background-color: rgba(55, 55, 52, 0.75);
+}
