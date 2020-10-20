@@ -1,1 +1,1 @@
-(()=>{"use strict";document.getElementById("add-project").addEventListener("click",(()=>{document.querySelector(".modal").classList.add("is-active")}))})();
+(()=>{"use strict";const e=document.querySelector(".modal");document.getElementById("add-project").addEventListener("click",(()=>{e.classList.add("is-active")}));const t=()=>e.classList.remove("is-active");document.querySelector(".modal-background").addEventListener("click",t),document.querySelector(".modal-close").addEventListener("click",t)})();

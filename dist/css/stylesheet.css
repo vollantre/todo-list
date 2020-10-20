@@ -29,3 +29,7 @@ body {
 .icon {
   margin-right: 0;
 }
+
+.card {
+  max-width: 300px;
+}
