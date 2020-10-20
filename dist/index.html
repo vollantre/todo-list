@@ -16,16 +16,32 @@
           <span style="margin-right: 0;" class="icon is-small">
             <i class="fa fa-plus"></i>
           </span>
-          Add new task
+          Add new project
         </button>
         <div class="modal">
           <div class="modal-background"></div>
           <div class="modal-content">
-            <p>
-              Hello
-            </p>
+            <form>
+              <div class="field">
+                <label class="label">Add new project</label>
+                <div class="control">
+                  <input class="input is-primary" type="text" placeholder="Project name">
+                </div>
+              </div>
+              <div class="field is-grouped">
+                <p class="control">
+                  <a class="button is-primary">
+                    Save
+                  </a>
+                </p>
+                <p class="control">
+                  <a id="modal-close" class="button is-light">
+                    Cancel
+                  </a>
+                </p>
+              </div>
+            </form>
           </div>
-          <button class="modal-close is-large" aria-label="close"></button>
         </div>
       </div>
       <p class="menu-label">
@@ -34,7 +50,7 @@
       <ul class="menu-list">
         <li>
           <ul>
-            <li><a>sample project</a></li>
+            <li><a>Default project</a></li>
           </ul>
         </li>
       </ul>
@@ -62,7 +78,7 @@
           <footer class="card-footer">
             <a href="#" class="card-footer-item">Edit</a>
             <a href="#" class="card-footer-item">Delete</a>
-          </footer>
+          </footer> 
         </div>
       </div>
     </div>

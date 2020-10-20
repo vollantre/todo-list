@@ -11,5 +11,4 @@ addProjectBtn.addEventListener("click", () => {
 
 const closeModal = () => modal.classList.remove("is-active");
 
-document.querySelector(".modal-background").addEventListener("click", closeModal);
-document.querySelector(".modal-close").addEventListener("click", closeModal);
+document.getElementById("modal-close").addEventListener("click", closeModal);
