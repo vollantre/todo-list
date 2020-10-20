@@ -1,5 +1,4 @@
 export default (() => {
-  //add event listeners
   const closeModal = modalId => document.getElementById(modalId).classList.remove("is-active");
   const openModal = modalId => document.getElementById(modalId).classList.add("is-active");
 
@@ -7,6 +6,7 @@ export default (() => {
   const newProjectBtn = document.getElementById('new-project-btn');
 
   return {
+    //add click events listeners
     addEvents() {
       newProjectBtn.addEventListener("click", () => openModal("project-modal"));
       newTaskBtn.addEventListener("click", () => openModal("task-modal"));
