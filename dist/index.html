@@ -12,13 +12,13 @@
     <aside class="menu">
       <h1 class="title">TODO APP</h1>
       <div style="justify-content: center; display: flex; margin-bottom: 20px;">
-        <button id="add-project-btn" class="button is-primary is-rounded">
+        <button id="new-project-btn" class="button is-primary is-rounded">
           <span style="margin-right: 0;" class="icon is-small">
             <i class="fa fa-plus"></i>
           </span>
           Add new project
         </button>
-        <div class="modal">
+        <div id="new-project-modal" class="modal">
           <div class="modal-background"></div>
           <div class="modal-content">
             <form>
@@ -70,7 +70,6 @@
           <div class="card-content">
             <div class="content">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-              <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
               <br>
               <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
             </div>
@@ -80,11 +79,36 @@
             <a href="#" class="card-footer-item">Delete</a>
           </footer> 
         </div>
-        <button data-tooltip="Add new task" id="add-todo-btn" class="button is-primary is-rounded">
+        <button data-tooltip="Add new task" id="new-task-btn" class="button is-primary is-rounded">
           <span class="icon is-large">
             <i class="fa fa-plus"></i>
           </span>
         </button>
+        <div id="new-task-modal" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <form>
+              <div class="field">
+                <label class="label">Add new task</label>
+                <div class="control">
+                  <input class="input is-primary" type="text" placeholder="Task name">
+                </div>
+              </div>
+              <div class="field is-grouped">
+                <p class="control">
+                  <a class="button is-primary">
+                    Save
+                  </a>
+                </p>
+                <p class="control">
+                  <a id="modal-close" class="button is-light">
+                    Cancel
+                  </a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
     <script src="./main.js"></script>

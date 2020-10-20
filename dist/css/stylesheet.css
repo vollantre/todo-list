@@ -40,7 +40,7 @@ form {
   padding: 15px;
 }
 
-#add-todo-btn {
+#new-task-btn {
 	position:fixed;
 	bottom:40px;
 	right:40px;
