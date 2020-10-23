@@ -61,6 +61,12 @@ form {
   font-size: 1.35rem;
 }
 
+#tasks {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
 [data-tooltip]:not(.is-loading)::after, [data-tooltip]:not(.is-disabled)::after, [data-tooltip]:not([disabled])::after {
   border-color: rgba(55, 55, 52, 0.75) transparent transparent transparent;
 }

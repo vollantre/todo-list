@@ -1,48 +1,52 @@
 export default (() => {
-  const closeModal = modalId => document.getElementById(modalId).classList.remove("is-active");
-  const openModal = modalId => document.getElementById(modalId).classList.add("is-active");
+  const active = "is-active";
+  const closeModal = modalId => document.getElementById(modalId).classList.remove(active);
+  const openModal = modalId => document.getElementById(modalId).classList.add(active);
+
+  const addListenersToModals = () => {
+    document.getElementById('new-project-btn').addEventListener("click", () => openModal("project-modal"));
+    document.getElementById('new-task-btn').addEventListener("click", () => openModal("task-modal"));
+
+    document.querySelectorAll("a#modal-close").forEach(node => {
+      const modal = node.parentNode.parentNode.parentNode.parentNode.parentNode;
+      node.addEventListener("click", () => closeModal(modal.id));
+    });
+  };
+
+  const addListenerToProjectList = () => {
+    const projectList = document.querySelectorAll("#project-list>li>a");
+
+    projectList.forEach(a => {
+      a.addEventListener("click", () => {
+        document.querySelector("#project-list>li>.is-active")?.classList.remove(active);
+        a.classList.add(active);
+      });
+    });
+  };
 
   return {
     //add click events listeners
-    addEvents: () => {
-      const newProjectBtn = document.getElementById('new-project-btn');
-      const newTaskBtn = document.getElementById('new-task-btn');
-
-      newProjectBtn.addEventListener("click", () => openModal("project-modal"));
-      newTaskBtn.addEventListener("click", () => openModal("task-modal"));
-
-      const modals = document.querySelectorAll("a#modal-close");
-
-      modals.forEach(node => {
-        const modal = node.parentNode.parentNode.parentNode.parentNode.parentNode;
-        node.addEventListener("click", () => closeModal(modal.id));
-      });
-
-
-      //const projectList = document.querySelectorAll("#project-list>li");
-//
-      //projectList.forEach(node => {
-      //  node.firstChild(a => a.addEventListener)
-      //});
+    addEventListeners() {
+      addListenersToModals();
+      addListenerToProjectList();
     },
-
-    renderProject: project => {
-
-    },
-
-    addProjects: projects => {
+    addProject(project) {
       const projectList = document.getElementById("project-list");
 
-      projects.forEach(project => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
+      const li = document.createElement("li");
+      const a = document.createElement("a");
 
-        a.innerText = project.name;
+      a.innerText = project.name;
 
-        li.id = `project-${project.id}`;
-        li.appendChild(a);
-        projectList.appendChild(li);
-      });
-    }
+      li.id = `project-${project.id}`;
+      li.appendChild(a);
+      projectList.appendChild(li);
+    },
+    renderInitialProjects(projects) {
+      projects.forEach(this.addProject);
+    },
+    addTask(task) {
+      
+    },
   };
 })();
