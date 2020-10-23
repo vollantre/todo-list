@@ -25,12 +25,12 @@
               <h4 class="title is-3 is-centered">Add new project</h4>
               <div class="field">
                 <div class="control">
-                  <input class="input is-primary" type="text" placeholder="Project name">
+                  <input name="name" class="input is-primary" type="text" placeholder="Project name">
                 </div>
               </div>
               <div class="field is-grouped is-grouped-centered">
                 <p class="control">
-                  <a class="button is-primary">
+                  <a id="save-project-btn" class="button is-primary">
                     Save
                   </a>
                 </p>
@@ -81,25 +81,25 @@
             <h4 class="title is-3 is-centered">Add new task</h4>
             <div class="field">
               <div class="control">
-                <input class="input is-primary" type="text" placeholder="Title">
+                <input name="title" class="input is-primary" type="text" placeholder="Title">
               </div>
             </div>
             <div class="field">
               <div class="control">
-                <input class="input is-primary" type="text" placeholder="Description">
+                <input name="description" class="input is-primary" type="text" placeholder="Description">
               </div>
             </div>
             <div class="field">
-              <label class="label">Due date</label>
+              <label for="dueDate" class="label">Due date</label>
               <div class="control">
-                <input class="input is-primary" type="date" placeholder="Description">
+                <input name="dueDate" class="input is-primary" type="date">
               </div>
             </div>
             <div class="field">
-              <label class="label">Priotity</label>
+              <label for="priority" class="label">Priority</label>
               <div class="control">
                 <div class="select is-info">
-                  <select>
+                  <select name="priority">
                     <option>Low</option>
                     <option>Medium</option>
                     <option>High</option>
@@ -109,12 +109,12 @@
             </div>
             <div class="field">
               <div class="control">
-                <textarea class="textarea is-primary" placeholder="Notes"></textarea>
+                <textarea name="notes" class="textarea is-primary" placeholder="Notes"></textarea>
               </div>
             </div>
             <div class="field is-grouped is-grouped-centered">
               <p class="control">
-                <a class="button is-primary">
+                <a id="save-task-btn" class="button is-primary">
                   Save
                 </a>
               </p>
