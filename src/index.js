@@ -8,3 +8,4 @@ const projects = [{
 }];
 
 DOMHelper.addEvents();
+DOMHelper.addProjects(projects);

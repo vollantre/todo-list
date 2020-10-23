@@ -19,7 +19,8 @@ form {
 
 .menu {
   background-color: #ffffff;
-  width: 225px;
+  width: 240px;
+  padding-left: 15px;
 }
 
 .title {
