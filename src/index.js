@@ -7,26 +7,18 @@ const initialProjects = [new Project("Default project")];
 const projects = initialProjects;
 
 const handlers = {
-  projectOnSave: (e) => {
-    e.preventDefault();
-    const form = DOMHelper.projectForm;
-    const { name } = DOMHelper.getFormData(form);
-
-    const project = new Project(name);
+  projectOnSave: data => {
+    const project = new Project(data.name);
 
     projects.push(project);
-    DOMHelper.addProject(project);
 
-    //reset and close form
-    form.reset();
-    DOMHelper.desactiveElement("project-modal");
+    DOMHelper.addProject(project);
   },
+  projectOnSelect: project => currentProject = project
 }
 
-DOMHelper.addProjects(projects);
 DOMHelper.handlers = handlers;
+DOMHelper.addProjects(projects);
+DOMHelper.selectProject(projects[0]);
 
 DOMHelper.addEventHandlers();
-
-currentProject = projects[0];
-DOMHelper.currentProject = currentProject;
