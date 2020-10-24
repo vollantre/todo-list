@@ -3,7 +3,7 @@ import DOMHelper from "./DOMHelper";
 import Project from "./Project";
 
 let currentProject = null;
-const initialProjects = [new Project("Default projectz")];
+const initialProjects = [new Project("Default project")];
 const projects = initialProjects;
 
 const handlers = {
@@ -14,11 +14,11 @@ const handlers = {
 
     DOMHelper.addProject(project);
   },
-  projectOnSelect: project => currentProject = project
+  projectOnSelect: projId => currentProject = projects.find(p => p.id === projId)
 };
 
 DOMHelper.handlers = handlers;
 DOMHelper.addProjects(projects);
-DOMHelper.selectProject(projects[0]);
+DOMHelper.selectProject(projects[0].id);
 
 DOMHelper.applyEventHandlers();

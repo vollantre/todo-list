@@ -43,7 +43,7 @@ export default (() => {
     return li;
   };
 
-  const renderProjectTasks = (project) => document.getElementById("project-title").innerText = project.name;
+  const renderProjectTasks = project => document.getElementById("project-title").innerText = project.name;
 
 
   const addListenersToModals = () => {
@@ -62,6 +62,7 @@ export default (() => {
   
   return {
     
+    projects: [],
     handlers: {},
 
     applyEventHandlers() {
@@ -70,20 +71,24 @@ export default (() => {
     },
 
     addProject(project) {
-      const newProject = createProject(project, () => this.selectProject(project));
+      const onSelect = () => this.selectProject(project.id);
+      const newProject = createProject(project, onSelect);
       projectList.appendChild(newProject);
-      this.selectProject(project);
+      onSelect();
     },
 
     addProjects(projects) {
+      this.projects = projects;
       projects.forEach(this.addProject.bind(this));
     },
 
-    selectProject(project) {
-      this.handlers.projectOnSelect(project);
+    selectProject(projId) {
       document.querySelector("#project-list>li>.is-active")?.classList.remove(active);
-      activateElement(document.getElementById(project.id));
-      renderProjectTasks(project);
+
+      this.handlers.projectOnSelect(projId);
+
+      activateElement(document.getElementById(projId));
+      renderProjectTasks(this.projects.find(p => p.id === projId));
     }
   };
 })();
