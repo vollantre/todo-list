@@ -8,9 +8,10 @@ module.exports = {
     filename: 'main.js'
   },
   module: {
-    rules: [{
-      test: /\.scss$/,
-      use: [
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader'
@@ -23,7 +24,13 @@ module.exports = {
             }
           }
         ]
-    }]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: { loader: 'babel-loader' }
+      }
+    ]
   },
   plugins: [
     new MiniCssExtractPlugin({
