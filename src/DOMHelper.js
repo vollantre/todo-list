@@ -6,66 +6,67 @@ export default (() => {
   const projectForm = document.forms[0];
   const taskForm = document.forms[1];
 
-  const deactivateElement = id => document.getElementById(id).classList.remove(active);
-  const activateElement = id => document.getElementById(id).classList.add(active);
+  const deactivateElement = el => el.classList.remove(active);
+  const activateElement = el => el.classList.add(active);
 
-  function renderProjectTasks(project) {
-    document.getElementById("project-title").innerText = project.name;
-  }
-
-  function getFormData(formEl) {
+  const getFormData = (formEl) => {
     const formData = {};
     Array.from(formEl.elements).forEach(el => formData[el.name] = el.value);
     return formData;
   }
 
-  function createProject(project) {
+  const formOnSubmit = onSave => e => {
+    e.preventDefault();
+
+    const formEl = e.target;
+    const formData = getFormData(formEl);
+
+    onSave(formData);
+
+    formEl.reset();
+    deactivateElement(document.querySelector(".modal.is-active"));
+  };
+
+  const renderProjectTasks = (project) => document.getElementById("project-title").innerText = project.name;
+
+  const createProject = (project, onSelect) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
 
     a.innerText = project.name;
     a.id = project.id;
 
-    a.addEventListener("click", () => {
-      this.selectProject(project);
-    });
+    a.addEventListener("click", onSelect);
 
     li.appendChild(a);
     return li;
   };
 
-  function addListenersToModals() {
-    document.getElementById('new-project-btn').addEventListener("click", () => activateElement("project-modal"));
-    document.getElementById('new-task-btn').addEventListener("click", () => activateElement("task-modal"));
+  const addListenersToModals = () => {
+    document.getElementById('new-project-btn').addEventListener("click", () => activateElement(document.getElementById("project-modal")));
+    document.getElementById('new-task-btn').addEventListener("click", () => activateElement(document.getElementById("task-modal")));
 
     document.querySelectorAll("button#modal-close").forEach(node => {
       const modal = node.parentNode.parentNode.parentNode.parentNode.parentNode;
       node.addEventListener("click", () => {
         modal.querySelector("form").reset();
-        deactivateElement(modal.id);
+        deactivateElement(modal);
       });
     });
   };
 
+  
   return {
+    
     handlers: {},
 
-    addEventHandlers() {
-      addListenersToModals.call(this);
-      projectForm.addEventListener("submit", e => {
-        e.preventDefault();
-        const formEl = e.target;
-        const formData = getFormData(formEl);
-
-        this.handlers.projectOnSave(formData);
-
-        formEl.reset();
-        deactivateElement("project-modal");
-      });
+    applyEventHandlers() {
+      addListenersToModals();
+      projectForm.addEventListener("submit", formOnSubmit(this.handlers.projectOnSave));
     },
 
     addProject(project) {
-      const newProject = createProject.call(this, project);
+      const newProject = createProject(project, () => this.selectProject(project));
       projectList.appendChild(newProject);
       this.selectProject(project);
     },
@@ -77,7 +78,7 @@ export default (() => {
     selectProject(project) {
       this.handlers.projectOnSelect(project);
       document.querySelector("#project-list>li>.is-active")?.classList.remove(active);
-      activateElement(project.id);
+      activateElement(document.getElementById(project.id));
       renderProjectTasks(project);
     }
   };

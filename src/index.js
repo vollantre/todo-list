@@ -15,10 +15,10 @@ const handlers = {
     DOMHelper.addProject(project);
   },
   projectOnSelect: project => currentProject = project
-}
+};
 
 DOMHelper.handlers = handlers;
 DOMHelper.addProjects(projects);
 DOMHelper.selectProject(projects[0]);
 
-DOMHelper.addEventHandlers();
+DOMHelper.applyEventHandlers();
