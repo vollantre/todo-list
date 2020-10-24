@@ -1,13 +1,15 @@
 export default (() => {
   const active = "is-active";
+
+  const deactivateElement = el => el.classList.remove(active);
+  const activateElement = el => el.classList.add(active);
+
   const projectList = document.getElementById("project-list");
+
 
   //forms
   const projectForm = document.forms[0];
   const taskForm = document.forms[1];
-
-  const deactivateElement = el => el.classList.remove(active);
-  const activateElement = el => el.classList.add(active);
 
   const getFormData = (formEl) => {
     const formData = {};
@@ -24,10 +26,9 @@ export default (() => {
     onSave(formData);
 
     formEl.reset();
-    deactivateElement(document.querySelector(".modal.is-active"));
+    deactivateElement(formEl.parentNode.parentNode);
   };
 
-  const renderProjectTasks = (project) => document.getElementById("project-title").innerText = project.name;
 
   const createProject = (project, onSelect) => {
     const li = document.createElement("li");
@@ -41,6 +42,9 @@ export default (() => {
     li.appendChild(a);
     return li;
   };
+
+  const renderProjectTasks = (project) => document.getElementById("project-title").innerText = project.name;
+
 
   const addListenersToModals = () => {
     document.getElementById('new-project-btn').addEventListener("click", () => activateElement(document.getElementById("project-modal")));
