@@ -25,19 +25,19 @@
               <h4 class="title is-3 is-centered">Add new project</h4>
               <div class="field">
                 <div class="control">
-                  <input name="name" class="input is-primary" type="text" placeholder="Project name">
+                  <input required name="name" class="input is-primary" type="text" placeholder="Project name">
                 </div>
               </div>
               <div class="field is-grouped is-grouped-centered">
                 <p class="control">
-                  <a id="save-project-btn" class="button is-primary">
+                  <button type="submit" id="save-project-btn" class="button is-primary">
                     Save
-                  </a>
+                  </button>
                 </p>
                 <p class="control">
-                  <a id="modal-close" class="button is-light">
+                  <button id="modal-close" class="button is-light">
                     Cancel
-                  </a>
+                  </button>
                 </p>
               </div>
             </form>
@@ -48,7 +48,7 @@
       <ul id="project-list" class="menu-list"></ul>
     </aside>
     <div style="flex: 1;">
-      <h1 class="title is-1 is-centered">Default project</h1>
+      <h1 id="project-title" class="title is-1 is-centered"></h1>
       <div id="tasks">
         <!-- <div class="card">
           <header class="card-header">
@@ -114,14 +114,14 @@
             </div>
             <div class="field is-grouped is-grouped-centered">
               <p class="control">
-                <a id="save-task-btn" class="button is-primary">
+                <button type="submit" id="save-task-btn" class="button is-primary">
                   Save
-                </a>
+                </button>
               </p>
               <p class="control">
-                <a id="modal-close" class="button is-light">
+                <button id="modal-close" class="button is-light">
                   Cancel
-                </a>
+                </button>
               </p>
             </div>
           </form>

@@ -3,20 +3,30 @@ import DOMHelper from "./DOMHelper";
 import Project from "./Project";
 
 let currentProject = null;
+const initialProjects = [new Project("Default project")]; 
+const projects = initialProjects;
 
-const projects = [new Project("Default project")];
+const handlers = {
+  projectOnSave: (e) => {
+    e.preventDefault();
+    const form = DOMHelper.projectForm;
+    const { name } = DOMHelper.getFormData(form);
 
-DOMHelper.renderInitialProjects(projects);
-DOMHelper.addEventHandlers({ projectOnSave: () => {
-  const form = DOMHelper.projectForm;
-  const { name } = DOMHelper.getFormData(form);
+    const project = new Project(name);
 
-  const project = new Project(name);
+    projects.push(project);
+    DOMHelper.addProject(project);
 
-  projects.push(project);
-  DOMHelper.addProject(project);
+    //reset and close form
+    form.reset();
+    DOMHelper.desactiveElement("project-modal");
+  },
+}
 
-  //reset and close form
-  form.reset();
-  DOMHelper.closeModal("project-modal");
-}});
+DOMHelper.addProjects(projects);
+DOMHelper.handlers = handlers;
+
+DOMHelper.addEventHandlers();
+
+currentProject = projects[0];
+DOMHelper.currentProject = currentProject;
