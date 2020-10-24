@@ -3,7 +3,7 @@ import DOMHelper from "./DOMHelper";
 import Project from "./Project";
 
 let currentProject = null;
-const initialProjects = [new Project("Default project")]; 
+const initialProjects = [new Project("Default projectz")];
 const projects = initialProjects;
 
 const handlers = {
